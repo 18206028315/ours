@@ -14,6 +14,8 @@ public class User {
 
     private  String email;
 
+    private String sax;
+
     @Override
     public String toString() {
         return "User{" +
