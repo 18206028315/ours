@@ -12,7 +12,19 @@ public class User {
         return User;
     }
 
+    private  String email;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "User='" + User + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
     public void setUser(String user) {
         User = user;
     }
+
+
 }
