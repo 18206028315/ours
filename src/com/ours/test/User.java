@@ -1,5 +1,7 @@
 package com.ours.test;
 
+import org.junit.Test;
+
 /**
  * 作者：凌宇
  * 日期：2020/12/5 10:39
@@ -14,7 +16,7 @@ public class User {
 
     private  String email;
 
-    private String sax;
+    public String sax;
 
     @Override
     public String toString() {
