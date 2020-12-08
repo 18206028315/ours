@@ -19,6 +19,7 @@
 	</head>
 
 	<body class="beg-login-bg">
+
 		<div class="beg-login-box">
 			<header>
 				<h1>作业管理系统</h1>
