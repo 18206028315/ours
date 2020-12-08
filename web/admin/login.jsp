@@ -1,18 +1,27 @@
 
+<%--
+  Created by IntelliJ IDEA.
+  User: 10978
+  Date: 2020/12/8
+  Time: 17:57
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<title>登录</title>
-		<link rel="stylesheet" href="../plugins/layui/css/layui.css" media="all" />
-		<link rel="stylesheet" href="../css/login.css" />
+		<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="css/login.css" />
 	</head>
 
 	<body class="beg-login-bg">
-
 		<div class="beg-login-box">
 			<header>
-				<h1>作业管理系统</h1>
+				<h1>后台登录</h1>
 			</header>
 			<div class="beg-login-main">
 				<form action="/manage/login" class="layui-form" method="post"><input name="__RequestVerificationToken" type="hidden" value="fkfh8D89BFqTdrE2iiSdG_L781RSRtdWOH411poVUWhxzA5MzI8es07g6KPYQh9Log-xf84pIR2RIAEkOokZL3Ee3UKmX0Jc8bW8jOdhqo81" />
@@ -46,15 +55,15 @@
 				<p>Beginner © </p>
 			</footer>
 		</div>
-		<script type="text/javascript" src="../plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="plugins/layui/layui.js"></script>
 		<script>
 			layui.use(['layer', 'form'], function() {
 				var layer = layui.layer,
 					$ = layui.jquery,
 					form = layui.form();
-
+					
 				form.on('submit(login)',function(data){
-
+					
 					location.href='index.html';
 					return false;
 				});
