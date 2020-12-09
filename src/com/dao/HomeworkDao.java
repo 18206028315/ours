@@ -17,4 +17,7 @@ public interface HomeworkDao {
 
     //删除作业表，用于撤回发布的作业
     Integer teacherDeleteHomeworkById(Integer h_id);
+
+    //用于学生查询自己有多少作业
+    Homework studentQueryByHw();
 }

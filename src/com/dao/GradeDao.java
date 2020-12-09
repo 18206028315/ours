@@ -11,4 +11,7 @@ public interface GradeDao {
 
     //插入成绩表，用于教师发布作业同时开辟学生作业数据存储空间
     Integer teacherInsertGrade(Grade grade);
+
+    //学生根据hid,sid定位更新作业
+    int updateHomeWork(Grade grade);
 }

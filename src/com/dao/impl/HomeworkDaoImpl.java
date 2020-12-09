@@ -24,4 +24,10 @@ public class HomeworkDaoImpl extends BaseDao implements HomeworkDao {
     public Integer teacherDeleteHomeworkById(Integer h_id) {
         return null;
     }
+
+    @Override
+    public Homework studentQueryByHw() {
+        String sql=" select * from  homework ";
+        return queryForOne(Homework.class,sql);
+    }
 }
