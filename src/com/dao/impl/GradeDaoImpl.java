@@ -16,6 +16,31 @@ public class GradeDaoImpl extends BaseDao implements GradeDao {
         String sql="UPDATE grade SET g_accessory = ? WHERE g_hid= ? AND g_sid = ?  ";
         return update(sql,grade.getG_accessory(),grade.getG_hid(),grade.getG_sid());
     }
+    //未读变已读
+    @Override
+    public int updateStatusUnreadToRead(Grade grade) {
+        String sql="UPDATE grade SET g_homeworkStatus = '已读' WHERE g_hid= ? AND g_sid = ?  ";
+        return update(sql,grade.getG_hid(),grade.getG_sid());
+    }
+    //将已读状态改为已提交状态
+    @Override
+    public int updateStatusReadToSubmitted(Grade grade) {
+        String sql="UPDATE grade SET g_homeworkStatus = '已提交' WHERE g_hid= ? AND g_sid = ?  ";
+        return update(sql,grade.getG_hid(),grade.getG_sid());
+    }
+    //将已提交状态改为已审核状态
+    @Override
+    public int updateStatusSubmittedToApproval(Grade grade) {
+        String sql="UPDATE grade SET g_homeworkStatus = '已审批' WHERE g_hid= ? AND g_sid = ?  ";
+        return update(sql,grade.getG_hid(),grade.getG_sid());
+    }
+    //查看成绩，评语等等
+    @Override
+    public Grade queryBySid(Integer sid) {
+        String sql=" select * from grade where g_sid= ?  ";
+        return queryForOne(Grade.class,sql,sid);
+    }
+
     @Override
     public Integer teacherInsertGrade(Grade grade) {
         return null;

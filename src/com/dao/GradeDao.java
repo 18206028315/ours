@@ -14,4 +14,13 @@ public interface GradeDao {
 
     //学生根据hid,sid定位更新作业
     int updateHomeWork(Grade grade);
+
+    //将未读状态改为已读状态
+    int updateStatusUnreadToRead(Grade grade);
+    //将已读状态改为已提交状态
+    int updateStatusReadToSubmitted(Grade grade);
+    //将已提交改为已审核
+    int updateStatusSubmittedToApproval(Grade grade);
+    //查看成绩，评语等等
+    Grade queryBySid(Integer sid);
 }

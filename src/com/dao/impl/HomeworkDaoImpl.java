@@ -25,9 +25,16 @@ public class HomeworkDaoImpl extends BaseDao implements HomeworkDao {
         return null;
     }
 
+    //按照最新事件排序出老师布置的作业
     @Override
     public Homework studentQueryByHw() {
-        String sql=" select * from  homework ";
+        String sql=" select * from  homework  ORDER BY createTime DESC ";
         return queryForOne(Homework.class,sql);
+    }
+    //根据hid查询出作业表的内容，主要是找到地址
+    @Override
+    public Homework studentQueryaccessory(Integer hid) {
+        String sql="select * from  homework  WHERE h_id = ?";
+        return queryForOne(Homework.class,sql,hid);
     }
 }
