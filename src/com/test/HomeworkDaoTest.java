@@ -52,7 +52,7 @@ public class HomeworkDaoTest {
     public void studentQueryaccessoryTest(){
         Homework homework = new Homework();
         Integer hid=1;
-        homework =  DataCenter.homeworkDao().studentQueryaccessory(hid);
+        homework =  DataCenter.homeworkDao().studentQueryAccessory(hid);
         System.out.println(homework);
     }
 }
