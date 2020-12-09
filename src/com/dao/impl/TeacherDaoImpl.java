@@ -21,8 +21,5 @@ public class TeacherDaoImpl extends BaseDao implements TeacherDao {
         return null;
     }
 
-    @Override
-    public Integer teacherInsertGrade(Grade grade) {
-        return null;
-    }
+
 }
