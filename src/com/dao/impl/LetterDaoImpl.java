@@ -4,6 +4,8 @@ import com.dao.BaseDao;
 import com.dao.LetterDao;
 import com.entity.Letter;
 
+import java.util.List;
+
 /**
  * 作者：凌宇
  * 日期：2020/12/8 19:00
@@ -12,9 +14,9 @@ import com.entity.Letter;
 public class LetterDaoImpl extends BaseDao implements LetterDao {
     //根据接收方id查询到要发给他的消息
     @Override
-    public Letter queryByAcceptId(Integer acceptId) {
-         String sql="select * from letter where l_accept = ?  ";
-        return queryForOne(Letter.class,sql,acceptId);
+    public List<Letter> queryByAcceptId(Integer acceptId) {
+         String sql="select * from letter where l_accept = ? ";
+        return queryForList(Letter.class,sql,acceptId);
     }
    //插入信息到letter表里 （发送消息）
     @Override
