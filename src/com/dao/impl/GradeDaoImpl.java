@@ -85,7 +85,7 @@ public class GradeDaoImpl extends BaseDao implements GradeDao {
      */
     @Override
     public List<Grade> teacherQueryGradeByHomeworkIdAndHomeworkStatus(Integer g_hid, String status1, String status2) {
-        String sql = "SELECT * FROM `Grade` WHERE `g_hid` = ? AND (`g_homeworkStatus` = ? OR `g_homeworkStatus` = ?) GROUP BY `g_homeworkStatus` ORDER BY `g_homeworkStatus`";
+        String sql = "SELECT * FROM `Grade` WHERE `g_hid` = ? AND (`g_homeworkStatus` = ? OR `g_homeworkStatus` = ?) ORDER BY `g_homeworkStatus` DESC";
         return queryForList(Grade.class, sql, g_hid, status1, status2);
     }
 

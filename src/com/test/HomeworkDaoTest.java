@@ -41,6 +41,8 @@ public class HomeworkDaoTest {
         Integer i = DataCenter.homeworkDao().teacherDeleteHomeworkById(h_id);
         System.out.println(i);
     }
+
+
     @Test
     public void studentQueryByHwTest(){
         Homework homework = new Homework();
@@ -48,6 +50,8 @@ public class HomeworkDaoTest {
         homework =  DataCenter.homeworkDao().studentQueryByHw(classid);
         System.out.println(homework);
     }
+
+
     @Test
     public void studentQueryaccessoryTest(){
         Homework homework = new Homework();
