@@ -8,12 +8,16 @@ package com.entity;
 public class Grade {
     private Integer g_id;  //成绩编号
     private Integer g_hid;  //作业编号
+    private String g_tName;  //老师姓名
     private Integer g_sid;  //学生编号
+    private String g_sName;  //学生姓名
+    private String g_hTitle;  //作业标题
     private String g_homeworkStatus;  //学生作业状态(已读/未读/已提交/已审批)
-    private String g_picture; //附件（地址）
+    private String g_accessory; //附件（地址）
     private String g_grade;  //成绩
     private String g_remark;  //老师评语
     private String submitTime;  //作业提交时间
+    private String issueTime;  //下发时间
     private String createTime;  //创建时间（作业发布时间）
 
     @Override
@@ -21,14 +25,58 @@ public class Grade {
         return "Grade{" +
                 "g_id=" + g_id +
                 ", g_hid=" + g_hid +
+                ", g_tName='" + g_tName + '\'' +
                 ", g_sid=" + g_sid +
+                ", g_sName='" + g_sName + '\'' +
+                ", g_hTitle='" + g_hTitle + '\'' +
                 ", g_homeworkStatus='" + g_homeworkStatus + '\'' +
-                ", g_picture='" + g_picture + '\'' +
+                ", g_accessory='" + g_accessory + '\'' +
                 ", g_grade='" + g_grade + '\'' +
                 ", g_remark='" + g_remark + '\'' +
                 ", submitTime='" + submitTime + '\'' +
+                ", issueTime='" + issueTime + '\'' +
                 ", createTime='" + createTime + '\'' +
                 '}';
+    }
+
+    public String getG_tName() {
+        return g_tName;
+    }
+
+    public void setG_tName(String g_tName) {
+        this.g_tName = g_tName;
+    }
+
+    public String getG_sName() {
+        return g_sName;
+    }
+
+    public void setG_sName(String g_sName) {
+        this.g_sName = g_sName;
+    }
+
+    public String getG_hTitle() {
+        return g_hTitle;
+    }
+
+    public void setG_hTitle(String g_hTitle) {
+        this.g_hTitle = g_hTitle;
+    }
+
+    public String getG_accessory() {
+        return g_accessory;
+    }
+
+    public void setG_accessory(String g_accessory) {
+        this.g_accessory = g_accessory;
+    }
+
+    public String getIssueTime() {
+        return issueTime;
+    }
+
+    public void setIssueTime(String issueTime) {
+        this.issueTime = issueTime;
     }
 
     public Integer getG_id() {
@@ -63,13 +111,7 @@ public class Grade {
         this.g_homeworkStatus = g_homeworkStatus;
     }
 
-    public String getG_picture() {
-        return g_picture;
-    }
 
-    public void setG_picture(String g_picture) {
-        this.g_picture = g_picture;
-    }
 
     public String getG_grade() {
         return g_grade;

@@ -7,24 +7,69 @@ package com.entity;
  */
 public class Letter {
     private Integer l_id;  //私信编号
-    private String l_send;  //发送方
-    private String l_accept;  //接收方
+    private Integer l_send;  //发送方编号
+    private String I_sendName;  //发送方姓名
+    private Integer l_accept;  //接收方编号
+    private String I_acceptName;  //接收方姓名
     private String l_title;  //私信标题
     private String l_content;  //私信内容
-    private String I_picture; //附件（地址）
+    private String I_accessory; //附件（地址）
     private String createTime;  //创建时间（发送时间）
+
 
     @Override
     public String toString() {
         return "Letter{" +
                 "l_id=" + l_id +
-                ", l_send='" + l_send + '\'' +
-                ", l_accept='" + l_accept + '\'' +
+                ", l_send=" + l_send +
+                ", I_sendName='" + I_sendName + '\'' +
+                ", l_accept=" + l_accept +
+                ", I_acceptName='" + I_acceptName + '\'' +
                 ", l_title='" + l_title + '\'' +
                 ", l_content='" + l_content + '\'' +
-                ", I_picture='" + I_picture + '\'' +
+                ", I_accessory='" + I_accessory + '\'' +
                 ", createTime='" + createTime + '\'' +
                 '}';
+    }
+
+    public Integer getL_send() {
+        return l_send;
+    }
+
+    public void setL_send(Integer l_send) {
+        this.l_send = l_send;
+    }
+
+    public String getI_sendName() {
+        return I_sendName;
+    }
+
+    public void setI_sendName(String i_sendName) {
+        I_sendName = i_sendName;
+    }
+
+    public Integer getL_accept() {
+        return l_accept;
+    }
+
+    public void setL_accept(Integer l_accept) {
+        this.l_accept = l_accept;
+    }
+
+    public String getI_acceptName() {
+        return I_acceptName;
+    }
+
+    public void setI_acceptName(String i_acceptName) {
+        I_acceptName = i_acceptName;
+    }
+
+    public String getI_accessory() {
+        return I_accessory;
+    }
+
+    public void setI_accessory(String i_accessory) {
+        I_accessory = i_accessory;
     }
 
     public Integer getL_id() {
@@ -35,21 +80,7 @@ public class Letter {
         this.l_id = l_id;
     }
 
-    public String getL_send() {
-        return l_send;
-    }
 
-    public void setL_send(String l_send) {
-        this.l_send = l_send;
-    }
-
-    public String getL_accept() {
-        return l_accept;
-    }
-
-    public void setL_accept(String l_accept) {
-        this.l_accept = l_accept;
-    }
 
     public String getL_title() {
         return l_title;
@@ -67,13 +98,6 @@ public class Letter {
         this.l_content = l_content;
     }
 
-    public String getI_picture() {
-        return I_picture;
-    }
-
-    public void setI_picture(String i_picture) {
-        I_picture = i_picture;
-    }
 
     public String getCreateTime() {
         return createTime;

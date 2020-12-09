@@ -8,9 +8,10 @@ package com.entity;
 public class Forum {
     private Integer f_id;  //帖子编号
     private Integer f_send;  //发送方
+    private String f_sendName;  //发送方姓名
     private String f_title;  //帖子标题
     private String f_content;  //帖子内容
-    private String f_picture;  //附件（地址）
+    private String f_accessory;  //附件（地址）
     private String createTime; //创建时间（发布时间）
 
     @Override
@@ -18,11 +19,28 @@ public class Forum {
         return "Forum{" +
                 "f_id=" + f_id +
                 ", f_send=" + f_send +
+                ", f_sendName='" + f_sendName + '\'' +
                 ", f_title='" + f_title + '\'' +
                 ", f_content='" + f_content + '\'' +
-                ", f_picture='" + f_picture + '\'' +
+                ", f_accessory='" + f_accessory + '\'' +
                 ", createTime='" + createTime + '\'' +
                 '}';
+    }
+
+    public String getF_sendName() {
+        return f_sendName;
+    }
+
+    public void setF_sendName(String f_sendName) {
+        this.f_sendName = f_sendName;
+    }
+
+    public String getF_accessory() {
+        return f_accessory;
+    }
+
+    public void setF_accessory(String f_accessory) {
+        this.f_accessory = f_accessory;
     }
 
     public Integer getF_send() {
@@ -58,13 +76,7 @@ public class Forum {
         this.f_content = f_content;
     }
 
-    public String getF_picture() {
-        return f_picture;
-    }
 
-    public void setF_picture(String f_picture) {
-        this.f_picture = f_picture;
-    }
 
     public String getCreateTime() {
         return createTime;

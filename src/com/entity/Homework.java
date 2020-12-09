@@ -10,9 +10,10 @@ import org.omg.CORBA.PRIVATE_MEMBER;
 public class Homework {
     private Integer h_id;  //作业ID
     private Integer h_tid;  //老师编号
+    private String h_tName;  //老师姓名
     private String h_title;  //作业标题
     private String h_attarName;  //附件标题
-    private String h_attar;  //附件（地址）
+    private String accessory;  //附件（地址）
     private String createTime;  //创建时间（作业发布时间）
 
     @Override
@@ -20,11 +21,28 @@ public class Homework {
         return "Homework{" +
                 "h_id=" + h_id +
                 ", h_tid=" + h_tid +
+                ", h_tName='" + h_tName + '\'' +
                 ", h_title='" + h_title + '\'' +
                 ", h_attarName='" + h_attarName + '\'' +
-                ", h_attar='" + h_attar + '\'' +
+                ", accessory='" + accessory + '\'' +
                 ", createTime='" + createTime + '\'' +
                 '}';
+    }
+
+    public String getH_tName() {
+        return h_tName;
+    }
+
+    public void setH_tName(String h_tName) {
+        this.h_tName = h_tName;
+    }
+
+    public String getAccessory() {
+        return accessory;
+    }
+
+    public void setAccessory(String accessory) {
+        this.accessory = accessory;
     }
 
     public Integer getH_id() {
@@ -59,13 +77,6 @@ public class Homework {
         this.h_attarName = h_attarName;
     }
 
-    public String getH_attar() {
-        return h_attar;
-    }
-
-    public void setH_attar(String h_attar) {
-        this.h_attar = h_attar;
-    }
 
     public String getCreateTime() {
         return createTime;

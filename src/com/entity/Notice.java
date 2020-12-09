@@ -9,8 +9,9 @@ public class Notice {
     private Integer n_id;  //告示编号
     private String n_title;  //告示标题
     private String n_content;  //告示内容
-    private String n_picture;  //附件（地址）
+    private String n_accessory;  //附件（地址）
     private String createTime;  //创建时间（告示发布时间）
+
 
     @Override
     public String toString() {
@@ -18,9 +19,17 @@ public class Notice {
                 "n_id=" + n_id +
                 ", n_title='" + n_title + '\'' +
                 ", n_content='" + n_content + '\'' +
-                ", n_picture='" + n_picture + '\'' +
+                ", n_accessory='" + n_accessory + '\'' +
                 ", createTime='" + createTime + '\'' +
                 '}';
+    }
+
+    public String getN_accessory() {
+        return n_accessory;
+    }
+
+    public void setN_accessory(String n_accessory) {
+        this.n_accessory = n_accessory;
     }
 
     public Integer getN_id() {
@@ -47,13 +56,7 @@ public class Notice {
         this.n_content = n_content;
     }
 
-    public String getN_picture() {
-        return n_picture;
-    }
 
-    public void setN_picture(String n_picture) {
-        this.n_picture = n_picture;
-    }
 
     public String getCreateTime() {
         return createTime;
