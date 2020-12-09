@@ -4,6 +4,8 @@ import com.dao.BaseDao;
 import com.dao.GradeDao;
 import com.entity.Grade;
 
+import java.util.List;
+
 /**
  * 作者：凌宇
  * 日期：2020/12/8 18:59
@@ -42,7 +44,7 @@ public class GradeDaoImpl extends BaseDao implements GradeDao {
     }
 
     /**
-     * 教师发布祖业的同时开辟每个学生成绩的空间
+     * 教师插入成绩表
      * @param grade
      * @return
      */
@@ -50,6 +52,41 @@ public class GradeDaoImpl extends BaseDao implements GradeDao {
     public Integer teacherInsertGrade(Grade grade) {
         String sql = "INSERT INTO `Grade` (`g_hid`,`g_tName`,`g_sid`,`g_sName`,`g_hTitle`,`g_homeworkStatus`) VALUES (?,?,?,?,?,?) ";
         return update(sql, grade.getG_hid(), grade.getG_tName(), grade.getG_sid(), grade.getG_sName(), grade.getG_hTitle(), grade.getG_homeworkStatus());
+    }
+
+    /**
+     * 教师通过作业编号批量删除成绩表
+     * @return
+     */
+    @Override
+    public Integer teacherDeleteGradeByHomeworkId(Integer g_hid) {
+        String sql = "DELETE FROM `Grade` WHERE `g_hid` = ?";
+        return update(sql, g_hid);
+    }
+
+    /**
+     * 教师通过作业编号查询成绩表
+     * @param g_hid  作业编号
+     * @return
+     */
+    @Override
+    public List<Grade> teacherQueryGradeByHomeworkId(Integer g_hid) {
+        String sql = "SELECT * FROM `Grade` WHERE `g_hid` = ?";
+        return queryForList(Grade.class, sql, g_hid);
+    }
+
+    /**
+     * 教师通过作业编号和成绩状态查询，通过成绩状态排序
+     *
+     * @param g_hid
+     * @param status1
+     * @param status2
+     * @return
+     */
+    @Override
+    public List<Grade> teacherQueryGradeByHomeworkIdAndHomeworkStatus(Integer g_hid, String status1, String status2) {
+        String sql = "SELECT * FROM `Grade` WHERE `g_hid` = ? AND (`g_homeworkStatus` = ? OR `g_homeworkStatus` = ?) GROUP BY `g_homeworkStatus` ORDER BY `g_homeworkStatus`";
+        return queryForList(Grade.class, sql, g_hid, status1, status2);
     }
 
 }

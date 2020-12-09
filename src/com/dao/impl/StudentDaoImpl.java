@@ -10,6 +10,7 @@ import com.entity.Student;
  * 描述：
  */
 public class StudentDaoImpl extends BaseDao implements StudentDao {
+
     @Override
     public Student queryUserByUsername(String username) {
         String sql=" select * from student where s_username= ?  ";

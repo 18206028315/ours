@@ -22,5 +22,5 @@ public interface HomeworkDao {
     Homework studentQueryByHw(String classid);
 
     //查询出老师附件的地址
-    Homework studentQueryaccessory(Integer hid);
+    Homework studentQueryAccessory(Integer hid);
 }

@@ -11,6 +11,7 @@ import org.junit.Test;
  */
 public class HomeworkDaoTest {
 
+    //教师发布作业表测试
     @Test
     public void TeacherInsertHomeworkTest() {
         Homework homework = new Homework();
@@ -20,6 +21,24 @@ public class HomeworkDaoTest {
         homework.setH_attarName("第一套试卷");
         homework.setH_accessory("马路边");
         Integer i = DataCenter.homeworkDao().teacherInsertHomework(homework);
+        System.out.println(i);
+    }
+
+    //教师查询作业详情测试
+    @Test
+    public void TeacherQueryByTeacherIdAndCreateTimeTest() {
+        Homework homework = new Homework();
+        Integer h_tid = 1;
+        String createTime = "2020-12-09 18:27:52";
+        homework = DataCenter.homeworkDao().teacherQueryByTeacherIdAndCreateTime(h_tid, createTime);
+        System.out.println(homework);
+    }
+
+    //教师撤回已发布作业测试
+    @Test
+    public void TeacherDeleteHomeworkByIdTest() {
+        Integer h_id = 5 ;
+        Integer i = DataCenter.homeworkDao().teacherDeleteHomeworkById(h_id);
         System.out.println(i);
     }
     @Test
