@@ -19,7 +19,8 @@ public interface HomeworkDao {
     Integer teacherDeleteHomeworkById(Integer h_id);
 
     //用于学生查询自己有多少作业
-    Homework studentQueryByHw();
+    Homework studentQueryByHw(String classid);
+
     //查询出老师附件的地址
     Homework studentQueryaccessory(Integer hid);
 }

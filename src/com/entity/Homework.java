@@ -13,7 +13,7 @@ public class Homework {
     private String h_tName;  //老师姓名
     private String h_title;  //作业标题
     private String h_attarName;  //附件标题
-    private String accessory;  //附件（地址）
+    private String h_accessory;  //附件（地址）
     private String createTime;  //创建时间（作业发布时间）
 
     @Override
@@ -24,25 +24,9 @@ public class Homework {
                 ", h_tName='" + h_tName + '\'' +
                 ", h_title='" + h_title + '\'' +
                 ", h_attarName='" + h_attarName + '\'' +
-                ", accessory='" + accessory + '\'' +
+                ", h_accessory='" + h_accessory + '\'' +
                 ", createTime='" + createTime + '\'' +
                 '}';
-    }
-
-    public String getH_tName() {
-        return h_tName;
-    }
-
-    public void setH_tName(String h_tName) {
-        this.h_tName = h_tName;
-    }
-
-    public String getAccessory() {
-        return accessory;
-    }
-
-    public void setAccessory(String accessory) {
-        this.accessory = accessory;
     }
 
     public Integer getH_id() {
@@ -61,6 +45,14 @@ public class Homework {
         this.h_tid = h_tid;
     }
 
+    public String getH_tName() {
+        return h_tName;
+    }
+
+    public void setH_tName(String h_tName) {
+        this.h_tName = h_tName;
+    }
+
     public String getH_title() {
         return h_title;
     }
@@ -77,6 +69,13 @@ public class Homework {
         this.h_attarName = h_attarName;
     }
 
+    public String getH_accessory() {
+        return h_accessory;
+    }
+
+    public void setH_accessory(String h_accessory) {
+        this.h_accessory = h_accessory;
+    }
 
     public String getCreateTime() {
         return createTime;

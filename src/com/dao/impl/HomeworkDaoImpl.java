@@ -19,7 +19,7 @@ public class HomeworkDaoImpl extends BaseDao implements HomeworkDao {
     @Override
     public Integer teacherInsertHomework(Homework homework) {
         String sql = "INSERT INTO `Homework` (`h_tid`,`h_tName`,`h_title`,`h_attarName`,`h_accessory`) VALUES (?,?,?,?,?)";
-        return update(sql,homework.getH_tid(),homework.getH_tName(),homework.getH_title(),homework.getH_attarName(),homework.getAccessory());
+        return update(sql,homework.getH_tid(),homework.getH_tName(),homework.getH_title(),homework.getH_attarName(),homework.getH_accessory());
     }
 
     @Override
@@ -34,9 +34,9 @@ public class HomeworkDaoImpl extends BaseDao implements HomeworkDao {
 
     //按照最新事件排序出老师布置的作业
     @Override
-    public Homework studentQueryByHw() {
-        String sql=" select * from  homework  ORDER BY createTime DESC ";
-        return queryForOne(Homework.class,sql);
+    public Homework studentQueryByHw(String classid) {
+        String sql="SELECT DISTINCT h.*FROM (teacher t LEFT JOIN homework h ON t.t_id=h.h_tid )LEFT JOIN grade g ON g.g_hid=h.h_id WHERE t.t_class= ? ORDER BY createTime DESC ";
+        return queryForOne(Homework.class,sql,classid);
     }
     //根据hid查询出作业表的内容，主要是找到地址
     @Override

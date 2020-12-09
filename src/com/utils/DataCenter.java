@@ -1,11 +1,7 @@
 package com.utils;
 
-import com.dao.GradeDao;
-import com.dao.HomeworkDao;
-import com.dao.TeacherDao;
-import com.dao.impl.GradeDaoImpl;
-import com.dao.impl.HomeworkDaoImpl;
-import com.dao.impl.TeacherDaoImpl;
+import com.dao.*;
+import com.dao.impl.*;
 
 /**
  * 作者：凌宇
@@ -16,7 +12,9 @@ public class DataCenter {
     private static TeacherDao teacherDao = null;
     private static HomeworkDao homeworkDao = null;
     private static GradeDao gradeDao = null;
-
+    private static StudentDao studentDao=null;
+    private static BulletinDao bulletinDao=null;
+    private static LetterDao letterDao=null;
 
 
     //老师表的数据库处理
@@ -41,5 +39,26 @@ public class DataCenter {
             gradeDao = new GradeDaoImpl();
         }
         return gradeDao;
+    }
+    //学生表的数据处理
+    public static StudentDao studentDao(){
+        if (studentDao == null){
+            studentDao=new StudentDaoImpl();
+        }
+        return studentDao;
+    }
+    //公告栏的数据处理
+    public static BulletinDao bulletinDao(){
+        if (bulletinDao == null){
+            bulletinDao=new BulletinDaoImpl();
+        }
+        return bulletinDao;
+    }
+    //私信的数据处理
+    public static LetterDao letterDao(){
+        if (letterDao == null){
+            letterDao=new LetterDaoImpl();
+        }
+        return letterDao;
     }
 }

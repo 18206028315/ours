@@ -18,8 +18,22 @@ public class HomeworkDaoTest {
         homework.setH_tName("马里奥");
         homework.setH_title("做完下发的试卷");
         homework.setH_attarName("第一套试卷");
-        homework.setAccessory("马路边");
+        homework.setH_accessory("马路边");
         Integer i = DataCenter.homeworkDao().teacherInsertHomework(homework);
         System.out.println(i);
+    }
+    @Test
+    public void studentQueryByHwTest(){
+        Homework homework = new Homework();
+        String classid="1";
+        homework =  DataCenter.homeworkDao().studentQueryByHw(classid);
+        System.out.println(homework);
+    }
+    @Test
+    public void studentQueryaccessoryTest(){
+        Homework homework = new Homework();
+        Integer hid=1;
+        homework =  DataCenter.homeworkDao().studentQueryaccessory(hid);
+        System.out.println(homework);
     }
 }
