@@ -15,7 +15,12 @@ public interface TeacherDao {
     Teacher queryTeacherByUsernameAndPassword(String t_username, String t_password);
 
     //教师修改个人信息
-    Integer update(Teacher teacher);
+    Integer teacherUpdatePersonalInformation(Teacher teacher);
+
+    //教师修改密码
+    Integer teacherUpdatePasswordById(String t_password, Integer t_id);
+
+
 
 
 

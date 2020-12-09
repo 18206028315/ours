@@ -41,8 +41,15 @@ public class GradeDaoImpl extends BaseDao implements GradeDao {
         return queryForOne(Grade.class,sql,sid);
     }
 
+    /**
+     * 教师发布祖业的同时开辟每个学生成绩的空间
+     * @param grade
+     * @return
+     */
     @Override
     public Integer teacherInsertGrade(Grade grade) {
-        return null;
+        String sql = "INSERT INTO `Grade` (`g_hid`,`g_tName`,`g_sid`,`g_sName`,`g_hTitle`,`g_homeworkStatus`) VALUES (?,?,?,?,?,?) ";
+        return update(sql, grade.getG_hid(), grade.getG_tName(), grade.getG_sid(), grade.getG_sName(), grade.getG_hTitle(), grade.getG_homeworkStatus());
     }
+
 }

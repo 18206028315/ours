@@ -10,9 +10,16 @@ import com.entity.Homework;
  * 描述：
  */
 public class HomeworkDaoImpl extends BaseDao implements HomeworkDao {
+
+    /**
+     * 教师发布作业
+     * @param homework
+     * @return
+     */
     @Override
     public Integer teacherInsertHomework(Homework homework) {
-        return null;
+        String sql = "INSERT INTO `Homework` (`h_tid`,`h_tName`,`h_title`,`h_attarName`,`h_accessory`) VALUES (?,?,?,?,?)";
+        return update(sql,homework.getH_tid(),homework.getH_tName(),homework.getH_title(),homework.getH_attarName(),homework.getAccessory());
     }
 
     @Override
