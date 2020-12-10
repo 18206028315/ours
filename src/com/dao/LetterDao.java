@@ -17,8 +17,6 @@ public interface LetterDao {
 
     List<Letter> teacherQueryLetterByTeacherId(Integer t_id);
 
-    //根据接收方的id查询所有发送给他的私信
-    List<Letter> queryByAcceptId(Integer acceptId );
     //发送私信，插入到letter表里
     int insert(Letter letter);
 }

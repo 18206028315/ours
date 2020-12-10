@@ -30,10 +30,7 @@ public class LetterDaoImpl extends BaseDao implements LetterDao {
         return null;
     }
 
-    @Override
-    public List<Letter> queryByAcceptId(Integer acceptId) {
-        return null;
-    }
+
 
     //插入信息到letter表里 （发送消息）
     @Override
