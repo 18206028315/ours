@@ -28,17 +28,17 @@ public interface GradeDao {
 
 
     //学生根据hid,sid定位更新作业
-    int updateHomeWork(Grade grade);
+    Integer studentUpdateHomeWork(Grade grade);
 
     //将未读状态改为已读状态
-    int updateStatusUnreadToRead(Grade grade);
+    Integer studentUpdateStatusUnreadToRead(Grade grade);
 
     //将已读状态改为已提交状态
-    int updateStatusReadToSubmitted(Grade grade);
+    Integer studentUpdateStatusReadToSubmitted(Grade grade);
 
     //将已提交改为已审核
-    int updateStatusSubmittedToApproval(Grade grade);
+    Integer studentUpdateStatusSubmittedToApproval(Grade grade);
 
     //查看成绩，评语等等
-    List<Grade> queryBySid(Integer sid);
+    List<Grade> studentqueryBySid(Integer sid);
 }

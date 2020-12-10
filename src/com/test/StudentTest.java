@@ -17,7 +17,7 @@ public class StudentTest {
          String username="stu001";
          String password="123";
 
-        student=   DataCenter.studentDao().querystuByuserNamePassW(username,password);
+        student=   DataCenter.studentDao().StudentQuerystuByuserNamePassW(username,password);
         System.out.println(student);
 
     }

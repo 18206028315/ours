@@ -11,5 +11,5 @@ import java.util.List;
  */
 public interface BulletinDao {
     //查询公告，按照bid顺序排列(按照最新的公告降序)
-   List<Bulletin> queryBulletinByTime();
+   List<Bulletin> studentQueryBulletinByTime(String classId);
 }

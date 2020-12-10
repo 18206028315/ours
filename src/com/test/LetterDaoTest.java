@@ -19,7 +19,7 @@ public class LetterDaoTest {
         Letter letter=new Letter();
         String i="stu001";
 
-        List<Letter>letters = DataCenter.letterDao().queryByAcceptId(i);
+        List<Letter>letters = DataCenter.letterDao().StudentQueryByAccept(i);
         System.out.println(letters);
     }
 
@@ -34,7 +34,7 @@ public class LetterDaoTest {
         letter.setL_title("哦豁");
         letter.setL_content("宝贝");
         letter.setL_accessory("123");
-       int i= DataCenter.letterDao().insert(letter);
+       int i= DataCenter.letterDao().StudentInsert(letter);
         System.out.println(i);
     }
 

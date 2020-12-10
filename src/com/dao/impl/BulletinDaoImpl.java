@@ -14,8 +14,8 @@ import java.util.List;
 public class BulletinDaoImpl extends BaseDao implements BulletinDao {
     //查询公告，按照bid顺序排列(按照最新的公告降序)
     @Override
-    public List<Bulletin> queryBulletinByTime() {
-        String sql=" select * from  bulletin  ORDER BY b_id DESC ";
-        return queryForList(Bulletin.class,sql);
+    public List<Bulletin> studentQueryBulletinByTime(String classId) {
+        String sql=" select DISTINCT  b.* from  bulletin b ,teacher t  WHERE b.b_send=t.t_id AND t.t_class= ? ORDER BY b_id DESC  ";
+        return queryForList(Bulletin.class,sql,classId);
     }
 }

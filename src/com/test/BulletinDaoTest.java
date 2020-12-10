@@ -15,7 +15,7 @@ public class BulletinDaoTest {
     //公告栏按照时间排序
     @Test
     public void queryBulletinByTimeTest(){
-       List<Bulletin> bulletins= DataCenter.bulletinDao().queryBulletinByTime();
+       List<Bulletin> bulletins= DataCenter.bulletinDao().studentQueryBulletinByTime();
         System.out.println(bulletins);
     }
 }

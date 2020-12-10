@@ -14,32 +14,32 @@ import java.util.List;
 public class GradeDaoImpl extends BaseDao implements GradeDao {
     //根据作业id和学生di定位更新提交的作业
     @Override
-    public int updateHomeWork(Grade grade) {
+    public Integer studentUpdateHomeWork(Grade grade) {
         String sql="UPDATE grade SET g_accessory = ? WHERE g_hid= ? AND g_sid = ?  ";
         return update(sql,grade.getG_accessory(),grade.getG_hid(),grade.getG_sid());
     }
     //未读变已读
     @Override
-    public int updateStatusUnreadToRead(Grade grade) {
+    public Integer studentUpdateStatusUnreadToRead(Grade grade) {
         String sql="UPDATE grade SET g_homeworkStatus = '已读' WHERE g_hid= ? AND g_sid = ?  ";
         return update(sql,grade.getG_hid(),grade.getG_sid());
     }
     //将已读状态改为已提交状态
     @Override
-    public int updateStatusReadToSubmitted(Grade grade) {
+    public Integer studentUpdateStatusReadToSubmitted(Grade grade) {
         String sql="UPDATE grade SET g_homeworkStatus = '已提交' WHERE g_hid= ? AND g_sid = ?  ";
         return update(sql,grade.getG_hid(),grade.getG_sid());
     }
     //将已提交状态改为已审核状态
     @Override
-    public int updateStatusSubmittedToApproval(Grade grade) {
+    public Integer studentUpdateStatusSubmittedToApproval(Grade grade) {
         String sql="UPDATE grade SET g_homeworkStatus = '已审批' WHERE g_hid= ? AND g_sid = ?  ";
         return update(sql,grade.getG_hid(),grade.getG_sid());
     }
     //查看成绩，评语等等
     @Override
-    public List<Grade> queryBySid(Integer sid) {
-        String sql=" select * from grade where g_sid= ?  ";
+    public List<Grade> studentqueryBySid(Integer sid) {
+        String sql=" select * from grade where g_sid= ? ORDER BY createTime DESC ";
         return queryForList(Grade.class,sql,sid);
     }
 

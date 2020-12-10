@@ -49,7 +49,7 @@ public class GradeDaoTest {
         grade.setG_hid(1);
         grade.setG_sid(1);
         grade.setG_accessory("D盘f");
-       int i= DataCenter.gradeDao().updateHomeWork(grade);
+       int i= DataCenter.gradeDao().studentUpdateHomeWork(grade);
         System.out.println(i);
     }
     //学生更新未读变已读
@@ -58,7 +58,7 @@ public class GradeDaoTest {
         Grade grade = new Grade();
         grade.setG_hid(1);
         grade.setG_sid(1);
-      int i=  DataCenter.gradeDao().updateStatusUnreadToRead(grade);
+      int i=  DataCenter.gradeDao().studentUpdateStatusUnreadToRead(grade);
         System.out.println(i);
     }
     //学生更新已读变已提交
@@ -67,7 +67,7 @@ public class GradeDaoTest {
         Grade grade = new Grade();
         grade.setG_hid(1);
         grade.setG_sid(1);
-        int i=  DataCenter.gradeDao().updateStatusReadToSubmitted(grade);
+        int i=  DataCenter.gradeDao().studentUpdateStatusReadToSubmitted(grade);
         System.out.println(i);
     }
     //学生更新已提交变已审核
@@ -76,13 +76,13 @@ public class GradeDaoTest {
         Grade grade = new Grade();
         grade.setG_hid(1);
         grade.setG_sid(1);
-        int i=  DataCenter.gradeDao().updateStatusSubmittedToApproval(grade);
+        int i=  DataCenter.gradeDao().studentUpdateStatusSubmittedToApproval(grade);
         System.out.println(i);
     }
     //学生查看成绩，评语
     @Test
     public void StudentqueryBySid(){
-        List<Grade> grades=   DataCenter.gradeDao().queryBySid(1);
+        List<Grade> grades=   DataCenter.gradeDao().studentqueryBySid(1);
         System.out.println(grades);
     }
 

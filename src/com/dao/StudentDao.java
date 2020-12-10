@@ -10,9 +10,11 @@ import com.entity.Student;
 public interface StudentDao {
     Student queryUserByUsername(String username);
     //登入用的方法
-    Student querystuByuserNamePassW(String username,String password);
-
-
+    Student StudentQuerystuByuserNamePassW(String username,String password);
+    //修改密码
+    Integer StudentUpdatePassword(String password,Integer id);
+    //修改个人信息
+    Integer StudentUpdateMessage(Student student);
 
 
 
