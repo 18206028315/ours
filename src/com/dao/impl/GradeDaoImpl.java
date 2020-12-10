@@ -89,4 +89,15 @@ public class GradeDaoImpl extends BaseDao implements GradeDao {
         return queryForList(Grade.class, sql, g_hid, status1, status2);
     }
 
+    /**
+     * 教师更新成绩表
+     * @param g_id
+     * @return
+     */
+    @Override
+    public Integer teacherUpdateGradeByGradeId(Integer g_id, String g_grade, String g_remark,String g_homeworkStatus) {
+        String sql = "UPDATE `Grade` SET `g_grade` = ? , `g_remark` = ? , `g_homeworkStatus` = ? WHERE `g_id` = ? ";
+        return update(sql, g_grade, g_remark,g_homeworkStatus, g_id);
+    }
+
 }

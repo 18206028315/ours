@@ -43,5 +43,27 @@ public class GradeDaoTest {
         System.out.println(gradeList);
     }
 
+    //教师查询作业状态测试
+    @Test
+    public void TeacherQueryGradeByHomeworkIdAndHomeworkStatusTest() {
+        Integer g_hid = 1;
+//        String status1 = "已读";
+        String status1 = "已提交";
+//        String status2 = "未读";
+        String status2 = "已审批";
+        List<Grade> gradeList = DataCenter.gradeDao().teacherQueryGradeByHomeworkIdAndHomeworkStatus(g_hid, status1, status2);
+        System.out.println(gradeList);
+    }
+
+    //教师批改作业测试
+    @Test
+    public void TeacherUpdateGradeByGradeIdTest() {
+        Integer g_id = 1;
+        String g_grade = "80";
+        String g_remark = "写的普通";
+        String g_homeworkStatus = "已审批";
+        Integer i = DataCenter.gradeDao().teacherUpdateGradeByGradeId(g_id, g_grade, g_remark, g_homeworkStatus);
+        System.out.println(i);
+    }
 
 }

@@ -23,6 +23,10 @@ public interface GradeDao {
     //教师查询本次作业未提交的人，用于提醒交作业,同时进行排序
     List<Grade> teacherQueryGradeByHomeworkIdAndHomeworkStatus(Integer g_hid, String status1, String status2);
 
+    //教师单个批改作业以及写评语
+    Integer teacherUpdateGradeByGradeId(Integer g_id, String g_grade, String g_remark,String g_homeworkStatus);
+
+
     //学生根据hid,sid定位更新作业
     int updateHomeWork(Grade grade);
 

@@ -14,6 +14,7 @@ public class Letter {
     private String l_title;  //私信标题
     private String l_content;  //私信内容
     private String I_accessory; //附件（地址）
+    private String I_status;  //私信状态（已读未读）
     private String createTime;  //创建时间（发送时间）
 
 
@@ -28,8 +29,17 @@ public class Letter {
                 ", l_title='" + l_title + '\'' +
                 ", l_content='" + l_content + '\'' +
                 ", I_accessory='" + I_accessory + '\'' +
+                ", I_status='" + I_status + '\'' +
                 ", createTime='" + createTime + '\'' +
                 '}';
+    }
+
+    public String getI_status() {
+        return I_status;
+    }
+
+    public void setI_status(String i_status) {
+        I_status = i_status;
     }
 
     public Integer getL_send() {

@@ -19,4 +19,6 @@ public class LetterDaoTest {
         List<Letter>letters = DataCenter.letterDao().queryByAcceptId(i);
         System.out.println(letters);
     }
+
+
 }
