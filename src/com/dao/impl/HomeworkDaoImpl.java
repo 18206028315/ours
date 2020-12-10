@@ -20,8 +20,8 @@ public class HomeworkDaoImpl extends BaseDao implements HomeworkDao {
      */
     @Override
     public Integer teacherInsertHomework(Homework homework) {
-        String sql = "INSERT INTO `Homework` (`h_tid`,`h_tName`,`h_title`,`h_attarName`,`h_accessory`) VALUES (?,?,?,?,?)";
-        return update(sql,homework.getH_tid(),homework.getH_tName(),homework.getH_title(),homework.getH_attarName(),homework.getH_accessory());
+        String sql = "INSERT INTO `Homework` (`h_tid`,`h_tName`,`h_title`,`h_attarName`,`h_accessory`,`createTime`) VALUES (?,?,?,?,?,?)";
+        return update(sql,homework.getH_tid(),homework.getH_tName(),homework.getH_title(),homework.getH_attarName(),homework.getH_accessory(),homework.getCreateTime());
     }
 
     /**

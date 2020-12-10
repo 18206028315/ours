@@ -12,13 +12,13 @@ import java.util.List;
  */
 public interface HomeworkDao {
 
-    //插入作业表，用于教师发布作业
+    //教师插入作业表，用于教师发布作业
     Integer teacherInsertHomework(Homework homework);
 
-    //查询作业表，用于教师查询发出的作业详情
+    //教师查询作业表，用于教师查询发出的作业详情
     Homework teacherQueryByTeacherIdAndCreateTime(Integer h_tid, String createTime);
 
-    //删除作业表，用于撤回发布的作业
+    //教师删除作业表，用于撤回发布的作业
     Integer teacherDeleteHomeworkById(Integer h_id);
 
     //用于学生查询自己有多少作业

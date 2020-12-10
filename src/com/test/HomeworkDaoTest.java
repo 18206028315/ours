@@ -2,6 +2,7 @@ package com.test;
 
 import com.entity.Homework;
 import com.utils.DataCenter;
+import com.utils.MessageUtils;
 import org.junit.Test;
 
 import java.util.List;
@@ -22,6 +23,7 @@ public class HomeworkDaoTest {
         homework.setH_title("做完下发的试卷");
         homework.setH_attarName("第一套试卷");
         homework.setH_accessory("马路边");
+        homework.setCreateTime(MessageUtils.GetNowTime());
         Integer i = DataCenter.homeworkDao().teacherInsertHomework(homework);
         System.out.println(i);
     }

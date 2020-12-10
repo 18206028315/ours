@@ -24,8 +24,10 @@ public interface GradeDao {
     List<Grade> teacherQueryGradeByHomeworkIdAndHomeworkStatus(Integer g_hid, String status1, String status2);
 
     //教师单个批改作业以及写评语
-    Integer teacherUpdateGradeByGradeId(Integer g_id, String g_grade, String g_remark,String g_homeworkStatus);
+    Integer teacherUpdateGradeByGradeId(Grade grade);
 
+    //教师通过学生编号查询自己发布的历次作业成绩
+    List<Grade> teacherQueryGradeByStudentIdAndTeacherId(Integer g_sid, Integer h_tid);
 
     //学生根据hid,sid定位更新作业
     Integer studentUpdateHomeWork(Grade grade);

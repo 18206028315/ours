@@ -2,6 +2,8 @@ package com.utils;
 
 import com.dao.*;
 import com.dao.impl.*;
+import com.service.Impl.TeacherServiceImpl;
+import com.service.TeacherService;
 
 /**
  * 作者：凌宇
@@ -15,6 +17,7 @@ public class DataCenter {
     private static StudentDao studentDao=null;
     private static BulletinDao bulletinDao=null;
     private static LetterDao letterDao=null;
+    private static TeacherService teacherService = null;
 
 
     //老师表的数据库处理
@@ -60,5 +63,14 @@ public class DataCenter {
             letterDao=new LetterDaoImpl();
         }
         return letterDao;
+    }
+
+
+    //教师功能表的数据处理
+    public static TeacherService teacherService() {
+        if (teacherService == null) {
+            teacherService = new TeacherServiceImpl();
+        }
+        return teacherService;
     }
 }

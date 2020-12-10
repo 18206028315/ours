@@ -12,4 +12,10 @@ import java.util.List;
 public interface BulletinDao {
     //查询公告，按照bid顺序排列(按照最新的公告降序)
    List<Bulletin> studentQueryBulletinByTime(String classId);
+
+    //教师发布公告
+    Integer teacherInsertBulletin(Bulletin bulletin);
+
+    //教师删除公告
+    Integer teacherDeleteBulletin(Integer b_id);
 }

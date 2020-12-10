@@ -2,6 +2,7 @@ package com.test;
 
 import com.entity.Grade;
 import com.utils.DataCenter;
+import com.utils.MessageUtils;
 import org.junit.Test;
 
 import java.util.List;
@@ -23,6 +24,8 @@ public class GradeDaoTest {
         grade.setG_sName("李四");
         grade.setG_hTitle("做完下发的试卷");
         grade.setG_homeworkStatus("未读");
+        String time = MessageUtils.GetNowTime();
+        grade.setCreateTime(time);
         Integer i = DataCenter.gradeDao().teacherInsertGrade(grade);
         System.out.println(i);
     }
@@ -101,11 +104,13 @@ public class GradeDaoTest {
     //教师批改作业测试
     @Test
     public void TeacherUpdateGradeByGradeIdTest() {
-        Integer g_id = 1;
-        String g_grade = "80";
-        String g_remark = "写的普通";
-        String g_homeworkStatus = "已审批";
-        Integer i = DataCenter.gradeDao().teacherUpdateGradeByGradeId(g_id, g_grade, g_remark, g_homeworkStatus);
+        Grade grade = new Grade();
+        grade.setG_id(1);
+        grade.setG_grade("80");
+        grade.setG_remark("写的普通");
+        grade.setG_homeworkStatus("已审批");
+        grade.setIssueTime(MessageUtils.GetNowTime());
+        Integer i = DataCenter.gradeDao().teacherUpdateGradeByGradeId(grade);
         System.out.println(i);
     }
 

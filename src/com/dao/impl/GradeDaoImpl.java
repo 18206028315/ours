@@ -50,8 +50,9 @@ public class GradeDaoImpl extends BaseDao implements GradeDao {
      */
     @Override
     public Integer teacherInsertGrade(Grade grade) {
-        String sql = "INSERT INTO `Grade` (`g_hid`,`g_tName`,`g_sid`,`g_sName`,`g_hTitle`,`g_homeworkStatus`) VALUES (?,?,?,?,?,?) ";
-        return update(sql, grade.getG_hid(), grade.getG_tName(), grade.getG_sid(), grade.getG_sName(), grade.getG_hTitle(), grade.getG_homeworkStatus());
+        String sql = "INSERT INTO `Grade` (`g_hid`,`g_tName`,`g_sid`,`g_sName`,`g_hTitle`,`g_homeworkStatus`,`createTime`) VALUES (?,?,?,?,?,?,?) ";
+        return update(sql, grade.getG_hid(), grade.getG_tName(), grade.getG_sid(), grade.getG_sName(), grade.getG_hTitle(), grade.getG_homeworkStatus()
+        ,grade.getCreateTime());
     }
 
     /**
@@ -77,7 +78,6 @@ public class GradeDaoImpl extends BaseDao implements GradeDao {
 
     /**
      * 教师通过作业编号和成绩状态查询，通过成绩状态排序
-     *
      * @param g_hid
      * @param status1
      * @param status2
@@ -91,13 +91,25 @@ public class GradeDaoImpl extends BaseDao implements GradeDao {
 
     /**
      * 教师更新成绩表
-     * @param g_id
+     * @param grade
      * @return
      */
     @Override
-    public Integer teacherUpdateGradeByGradeId(Integer g_id, String g_grade, String g_remark,String g_homeworkStatus) {
-        String sql = "UPDATE `Grade` SET `g_grade` = ? , `g_remark` = ? , `g_homeworkStatus` = ? WHERE `g_id` = ? ";
-        return update(sql, g_grade, g_remark,g_homeworkStatus, g_id);
+    public Integer teacherUpdateGradeByGradeId(Grade grade) {
+        String sql = "UPDATE `Grade` SET `g_grade` = ? , `g_remark` = ? , `g_homeworkStatus` = ? , `issueTime` = ? WHERE `g_id` = ? ";
+        return update(sql,grade.getG_grade(),grade.getG_remark(),grade.getG_homeworkStatus(),grade.getIssueTime(),grade.getG_id());
+    }
+
+    /**
+     * 教师查询单个学生的历次成绩
+     * @param g_sid
+     * @param h_tid
+     * @return
+     */
+    @Override
+    public List<Grade> teacherQueryGradeByStudentIdAndTeacherId(Integer g_sid, Integer h_tid) {
+        String sql = "SELECT g.* FROM `Grade` g , `Homework` h WHERE g.g_hid = h.h_id AND g.g_sid = ? AND h.h_tid = ? ORDER BY g.createTime DESC ";
+        return queryForList(Grade.class, sql, g_sid, h_tid);
     }
 
 }
