@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.sound.midi.Soundbank;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
@@ -23,7 +24,7 @@ import static com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY;
  * 描述:
  */
 @WebServlet("/stu.do")
-public class StudentServlet extends HttpServlet {
+public class StudentServlet extends BaseServlet {
     StudentService studentService=new StudentServiceImpl();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
          doGet(request,response);
@@ -65,4 +66,42 @@ public class StudentServlet extends HttpServlet {
     }
 
 
+    public  void  studentModifyPssword(HttpServletRequest request, HttpServletResponse response) throws IOException {
+         String password= String.valueOf(request.getParameter("password"));
+        Student student=(Student) request.getSession().getAttribute("student");
+       Integer i= studentService.StudentUpdatePassword(password,student.getS_id());
+        System.out.println(i);
+        if (i!=0){
+            response.getWriter().print("<script>alert('修改密码成功')</script>");
+            response.getWriter().println("<script>window.location.href='./login.jsp'</script>");
+        }else {
+            response.getWriter().print("<script>alert('修改密码失败')</script>");
+            response.getWriter().println("<script>window.location.href='./login.jsp'</script>");
+        }
+    }
+
+    public void studentModifyMessage(HttpServletRequest request, HttpServletResponse response) throws IOException {
+     String img=   request.getParameter("img");
+        String phone=    request.getParameter("phone");
+        String sex=   request.getParameter("sex");
+        String age=   request.getParameter("age");
+        String email=  request.getParameter("email");
+        Student student=(Student) request.getSession().getAttribute("student");
+        Student student1=null;
+        student1.setS_img(img);
+        student1.setS_phone(phone);
+        student1.setS_age(age);
+        student1.setS_email(email);
+        student1.setS_sex(sex);
+        student1.setS_id(student.getS_id());
+        Integer i= studentService.StudentUpdateMessage(student1);
+        System.out.println(i);
+        if (i!=0){
+            response.getWriter().print("<script>alert('修改个人信息成功')</script>");
+            response.getWriter().println("<script>window.location.href='./login.jsp'</script>");
+        }else {
+            response.getWriter().print("<script>alert('修改个人信息失败')</script>");
+            response.getWriter().println("<script>window.location.href='./login.jsp'</script>");
+        }
+    }
 }

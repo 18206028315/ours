@@ -4,6 +4,8 @@ import com.entity.Homework;
 import com.utils.DataCenter;
 import org.junit.Test;
 
+import java.util.List;
+
 /**
  * 作者：凌宇
  * 日期：2020/12/9 18:20
@@ -47,8 +49,8 @@ public class HomeworkDaoTest {
     public void studentQueryByHwTest(){
         Homework homework = new Homework();
         String classid="1";
-        homework =  DataCenter.homeworkDao().studentQueryByHw(classid);
-        System.out.println(homework);
+      List<Homework> homework1=  DataCenter.homeworkDao().studentQueryByHw(classid);
+        System.out.println(homework1);
     }
 
     //查询学生提交的作业

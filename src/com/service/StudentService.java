@@ -29,7 +29,7 @@ public interface StudentService {
     Integer StudentInsert(Letter letter);
 
     //用于学生查询自己有多少作业
-    Homework studentQueryByHw(String classid);
+    List<Homework> studentQueryByHw(String classid);
 
     //查询出老师附件的地址
     Homework studentQueryAccessory(Integer hid);
@@ -50,5 +50,5 @@ public interface StudentService {
     List<Grade> studentqueryBySid(Integer sid);
 
     //查询公告，按照bid顺序排列(按照最新的公告降序)
-    List<Bulletin> studentQueryBulletinByTime();
+    List<Bulletin> studentQueryBulletinByTime(String classId);
 }

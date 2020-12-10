@@ -28,7 +28,7 @@ public class StudentDaoImpl extends BaseDao implements StudentDao {
         String sql="update student set s_password = ? where s_id = ?";
         return update(sql,password,id);
     }
-
+    //修改个人信息
     @Override
     public Integer StudentUpdateMessage(Student student) {
         String sql="update student set s_img = ? ,s_phone = ? ,s_sex = ? , s_age = ? , s_email = ? where s_id = ?";

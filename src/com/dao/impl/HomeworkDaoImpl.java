@@ -4,6 +4,8 @@ import com.dao.BaseDao;
 import com.dao.HomeworkDao;
 import com.entity.Homework;
 
+import java.util.List;
+
 /**
  * 作者：凌宇
  * 日期：2020/12/8 18:59
@@ -47,9 +49,9 @@ public class HomeworkDaoImpl extends BaseDao implements HomeworkDao {
 
     //按照最新事件排序出老师布置的作业
     @Override
-    public Homework studentQueryByHw(String classid) {
+    public List<Homework>  studentQueryByHw(String classid) {
         String sql="SELECT DISTINCT h.*FROM (teacher t LEFT JOIN homework h ON t.t_id=h.h_tid )LEFT JOIN grade g ON g.g_hid=h.h_id WHERE t.t_class= ? ORDER BY createTime DESC ";
-        return queryForOne(Homework.class,sql,classid);
+        return queryForList(Homework.class,sql,classid);
     }
 
     //根据hid查询出作业表的内容，主要是找到地址

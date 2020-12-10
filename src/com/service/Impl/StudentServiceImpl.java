@@ -41,49 +41,58 @@ public class StudentServiceImpl implements StudentService {
     public List<Letter> StudentQueryBySend(String send) {
         return DataCenter.letterDao().StudentQueryBySend(send);
     }
+
     //学生发送信息
     @Override
     public Integer StudentInsert(Letter letter) {
         return DataCenter.letterDao().StudentInsert(letter);
     }
+
     //学生查自己自己有多少作业
     @Override
-    public Homework studentQueryByHw(String classid) {
+    public List<Homework> studentQueryByHw(String classid) {
         return DataCenter.homeworkDao().studentQueryByHw(classid);
     }
+
     //查询出老师附件的地址
     @Override
     public Homework studentQueryAccessory(Integer hid) {
         return DataCenter.homeworkDao().studentQueryAccessory(hid);
     }
+
      //学生交作业
     @Override
     public Integer studentUpdateHomeWork(Grade grade) {
         return DataCenter.gradeDao().studentUpdateHomeWork(grade);
     }
+
     //学生将未读状态改为已读状态
     @Override
     public Integer studentUpdateStatusUnreadToRead(Grade grade) {
         return DataCenter.gradeDao().studentUpdateStatusUnreadToRead(grade);
     }
+
     //学生将已读状态改为已提交状态
     @Override
     public Integer studentUpdateStatusReadToSubmitted(Grade grade) {
         return DataCenter.gradeDao().studentUpdateStatusReadToSubmitted(grade);
     }
+
     //学生将已提交改为已审核
     @Override
     public Integer studentUpdateStatusSubmittedToApproval(Grade grade) {
         return DataCenter.gradeDao().studentUpdateStatusSubmittedToApproval(grade);
     }
+
     //学生查看成绩，评语等等
     @Override
     public List<Grade> studentqueryBySid(Integer sid) {
         return DataCenter.gradeDao().studentqueryBySid(sid);
     }
+
     //学生查询公告
     @Override
-    public List<Bulletin> studentQueryBulletinByTime() {
-        return DataCenter.bulletinDao().studentQueryBulletinByTime();
+    public List<Bulletin> studentQueryBulletinByTime(String classId) {
+        return DataCenter.bulletinDao().studentQueryBulletinByTime(classId);
     }
 }

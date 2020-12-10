@@ -1,6 +1,9 @@
 package com.dao;
 
 import com.entity.Homework;
+import com.entity.Letter;
+
+import java.util.List;
 
 /**
  * 作者：凌宇
@@ -19,7 +22,7 @@ public interface HomeworkDao {
     Integer teacherDeleteHomeworkById(Integer h_id);
 
     //用于学生查询自己有多少作业
-    Homework studentQueryByHw(String classid);
+    List<Homework> studentQueryByHw(String classid);
 
     //查询出老师附件的地址
     Homework studentQueryAccessory(Integer hid);
