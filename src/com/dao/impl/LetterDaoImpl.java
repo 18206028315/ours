@@ -25,6 +25,16 @@ public class LetterDaoImpl extends BaseDao implements LetterDao {
         return queryForList(Letter.class,sql,send);
     }
 
+    @Override
+    public List<Letter> teacherQueryLetterByTeacherId(Integer t_id) {
+        return null;
+    }
+
+    @Override
+    public List<Letter> queryByAcceptId(Integer acceptId) {
+        return null;
+    }
+
     //插入信息到letter表里 （发送消息）
     @Override
     public int insert(Letter letter) {

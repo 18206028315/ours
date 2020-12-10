@@ -12,6 +12,7 @@ import java.util.List;
  * 描述:
  */
 public class LetterDaoTest {
+    //接收方收到的私信
     @Test
     public void queryByAcceptIdTest(){
         Letter letter=new Letter();
@@ -20,6 +21,7 @@ public class LetterDaoTest {
         List<Letter>letters = DataCenter.letterDao().queryByAcceptId(i);
         System.out.println(letters);
     }
+    //发私信
     @Test
     public void insertTest(){
         Letter letter=new Letter();
@@ -34,3 +36,4 @@ public class LetterDaoTest {
         System.out.println(i);
     }
 }
+

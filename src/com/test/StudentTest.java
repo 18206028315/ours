@@ -10,6 +10,7 @@ import org.junit.Test;
  * 描述:
  */
 public class StudentTest {
+    //登录
 @Test
     public void studentTest(){
         Student student=new Student();

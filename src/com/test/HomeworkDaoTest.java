@@ -42,7 +42,7 @@ public class HomeworkDaoTest {
         System.out.println(i);
     }
 
-
+    //查询该班级的所有布置的作业
     @Test
     public void studentQueryByHwTest(){
         Homework homework = new Homework();
@@ -51,7 +51,7 @@ public class HomeworkDaoTest {
         System.out.println(homework);
     }
 
-
+    //查询学生提交的作业
     @Test
     public void studentQueryaccessoryTest(){
         Homework homework = new Homework();
