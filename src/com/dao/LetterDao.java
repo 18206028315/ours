@@ -14,9 +14,19 @@ public interface LetterDao {
     List<Letter> queryByAcceptId(String accept);
     //根据发送方帐号查询自己发的所有私信
     List<Letter>queryBySendId(String send);
-
-    List<Letter> teacherQueryLetterByTeacherId(Integer t_id);
-
     //发送私信，插入到letter表里
     int insert(Letter letter);
+
+
+    //教师根据教师编号查询发给自己的邮件，并且通过状态排序
+    List<Letter> teacherQueryLetterByAccept(String l_accept);
+
+     //教师根据教师编号查询自己发送的邮件
+    List<Letter> teacherQueryLetterBySend(String l_send);
+
+    //教师发送私信
+    Integer teacherInsertLetter(Letter letter);
+
+
+
 }
