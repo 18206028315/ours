@@ -27,8 +27,8 @@ public class BulletinDaoImpl extends BaseDao implements BulletinDao {
      */
     @Override
     public Integer teacherInsertBulletin(Bulletin bulletin) {
-        String sql = " INSERT INTO `Bulletin` (`b_send`,`b_sendName`,`b_title`,`b_content`,`b_accessory`) VALUES (?,?,?,?,?) ";
-        return update(sql, bulletin.getB_send(), bulletin.getB_sendName(), bulletin.getB_title(), bulletin.getB_content(), bulletin.getB_accessory());
+        String sql = " INSERT INTO `Bulletin` (`b_class`,`b_send`,`b_sendName`,`b_title`,`b_content`,`b_accessory`) VALUES (?,?,?,?,?,?) ";
+        return update(sql,bulletin.getB_class(), bulletin.getB_send(), bulletin.getB_sendName(), bulletin.getB_title(), bulletin.getB_content(), bulletin.getB_accessory());
     }
 
     /**

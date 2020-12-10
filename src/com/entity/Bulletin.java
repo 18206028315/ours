@@ -7,22 +7,42 @@ package com.entity;
  */
 public class Bulletin {
     private Integer b_id; //告示编号
+    private Integer b_class;//班级编号
     private Integer b_send; //发送方编号
     private String b_sendName;  //发送方姓名
     private String b_title;  //发布的标题
     private String b_content;  //发布的内容
     private String b_accessory;  //附件（地址）
+    private String createTime;  //发布时间
 
     @Override
     public String toString() {
         return "Bulletin{" +
                 "b_id=" + b_id +
+                ", b_class=" + b_class +
                 ", b_send=" + b_send +
                 ", b_sendName='" + b_sendName + '\'' +
                 ", b_title='" + b_title + '\'' +
                 ", b_content='" + b_content + '\'' +
                 ", b_accessory='" + b_accessory + '\'' +
+                ", createTime='" + createTime + '\'' +
                 '}';
+    }
+
+    public Integer getB_class() {
+        return b_class;
+    }
+
+    public void setB_class(Integer b_class) {
+        this.b_class = b_class;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
     }
 
     public Integer getB_send() {

@@ -18,7 +18,7 @@ public class LetterDaoTest {
     public void queryByAcceptIdTest(){
         Letter letter=new Letter();
         String i="stu001";
-        List<Letter>letters = DataCenter.letterDao().queryByAcceptId(i);
+        List<Letter>letters = DataCenter.letterDao().StudentQueryByAccept(i);
         System.out.println(letters);
     }
 
