@@ -38,9 +38,9 @@ public class GradeDaoImpl extends BaseDao implements GradeDao {
     }
     //查看成绩，评语等等
     @Override
-    public Grade queryBySid(Integer sid) {
+    public List<Grade> queryBySid(Integer sid) {
         String sql=" select * from grade where g_sid= ?  ";
-        return queryForOne(Grade.class,sql,sid);
+        return queryForList(Grade.class,sql,sid);
     }
 
     /**

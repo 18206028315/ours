@@ -10,6 +10,10 @@ import java.util.List;
  * 描述：
  */
 public interface LetterDao {
+    //根据接收方的帐号查询所有发送给他的私信
+    List<Letter> queryByAcceptId(String accept);
+    //根据发送方帐号查询自己发的所有私信
+    List<Letter>queryBySendId(String send);
 
     List<Letter> teacherQueryLetterByTeacherId(Integer t_id);
 

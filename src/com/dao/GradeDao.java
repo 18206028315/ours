@@ -40,5 +40,5 @@ public interface GradeDao {
     int updateStatusSubmittedToApproval(Grade grade);
 
     //查看成绩，评语等等
-    Grade queryBySid(Integer sid);
+    List<Grade> queryBySid(Integer sid);
 }
