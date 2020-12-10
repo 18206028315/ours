@@ -17,6 +17,7 @@ public class BulletinDaoImpl extends BaseDao implements BulletinDao {
     public List<Bulletin> studentQueryBulletinByTime(String classId) {
         String sql=" select DISTINCT  b.* from  bulletin b ,teacher t  WHERE b.b_send=t.t_id AND t.t_class= ? ORDER BY b_id DESC  ";
         return queryForList(Bulletin.class,sql,classId);
+
     }
 
     /**
