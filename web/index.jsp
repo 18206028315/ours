@@ -12,6 +12,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  <c:redirect url="/admin/login.jsp"></c:redirect>
+  11111
   </body>
 </html>
