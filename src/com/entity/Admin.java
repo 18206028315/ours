@@ -12,6 +12,11 @@ public class Admin {
     private String a_phone;  //管理员电话
     private String a_img;  //管理员头像（路径）
 
+    public Admin(String a_username, String a_password) {
+        this.a_username = a_username;
+        this.a_password = a_password;
+    }
+
     public Integer getA_id() {
         return a_id;
     }
