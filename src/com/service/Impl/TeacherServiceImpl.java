@@ -93,4 +93,34 @@ public class TeacherServiceImpl implements TeacherService {
         return false;
     }
 
+    @Override
+    public List<Grade> teacherQueryGradeByHomeworkId(Integer g_hid) {
+        return null;
+    }
+
+    @Override
+    public List<Grade> teacherQueryGradeByHomeworkIdAndHomeworkStatus(Integer g_hid, String status1, String status2) {
+        return null;
+    }
+
+    @Override
+    public Integer teacherUpdateGradeByGradeId(Grade grade) {
+        return null;
+    }
+
+    @Override
+    public List<Letter> teacherQueryLetterByAccept(String l_accept) {
+        return null;
+    }
+
+    @Override
+    public List<Letter> teacherQueryLetterBySend(String l_send) {
+        return null;
+    }
+
+    @Override
+    public List<Student> teacherQueryStudentByClassId(Integer s_class) {
+        return null;
+    }
+
 }
